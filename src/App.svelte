@@ -1,10 +1,12 @@
 <script lang="ts">
-  import Greeting from "./lib/Greeting.svelte";
-
+  import AuthGuard from "./lib/AuthGuard.svelte";
+  import Edit from "./lib/Edit.svelte";
   import Home from "./lib/Home.svelte";
 </script>
 
-<main class="sm:container md:min-w-[100%] sm:mx-auto grid md:grid-cols-2 min-h-screen">
-    <Greeting />
-    <Home />
+<main class="app-wrapper">
+  <AuthGuard>
+    <Home slot="home" />
+    <Edit slot="edit"/>
+  </AuthGuard>
 </main>
