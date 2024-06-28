@@ -4,7 +4,7 @@
   import Home from "./lib/Home.svelte";
 </script>
 
-<main class="container mx-auto grid h-screen">
-  <Greeting />
-  <Home />
+<main class="sm:container md:min-w-[100%] sm:mx-auto grid md:grid-cols-2 min-h-screen">
+    <Greeting />
+    <Home />
 </main>
