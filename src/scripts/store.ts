@@ -7,19 +7,19 @@ export const covers = [
   {
     id: 1,
     img: defaultCover,
-    name: "Default Cover",
+    name: "Default",
     position: "col-start-1 col-end-3 row-start-1 row-end-3",
   },
   {
     id: 2,
     img: curbeCover,
-    name: "Curbe Cover",
+    name: "Curbe",
     position: "col-start-3 col-end-5 row-start-1 row-end-3",
   },
   {
     id: 3,
     img: fadeCover,
-    name: "Fade Cover",
+    name: "Fade",
     position: "col-start-2 col-end-4 row-start-3 row-end-5",
   },
 ] as const;
