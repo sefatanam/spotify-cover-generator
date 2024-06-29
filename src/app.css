@@ -13,6 +13,20 @@
   .linear-background{
     background: linear-gradient(to bottom, rgb(78 20 243) 0%, rgb(97 34 159) 100%);
   }
+
+  .label{
+    @apply block text-gray-400 text-sm font-bold mb-2;
+  }
+  .contorl{
+    @apply appearance-none border-2 border-gray-600 rounded w-full py-2 px-4  text-slate-200 leading-tight focus:outline-none bg-gray-900 focus:border-blue-500;
+  }
+
+  .contorl[type="color"]{
+    @apply text-current;
+  }
+  .contorl[type="file"]{
+    @apply bg-transparent;
+  }
 }
 
 
