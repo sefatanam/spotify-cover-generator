@@ -1,22 +1,23 @@
 <script lang="ts">
-    import { covers, type Cover, choosedCover } from "../scripts/store";
-    const selectCoverHandler = (cover: Cover) => {
-      if ($choosedCover?.id !== cover.id) {
-        choosedCover.set(cover);
-        return;
-      }
-      choosedCover.set(null);
-    };
-  </script>
-  
-  <div class="linear-background space-y-4 p-6">
-    <h1 class="font-bold text-3xl text-white md:text-6xl">Choose Template</h1>
+  import { covers, type Cover, choosedCover } from "../scripts/store";
+  const selectCoverHandler = (cover: Cover) => {
+    if ($choosedCover?.id !== cover.id) {
+      choosedCover.set(cover);
+      return;
+    }
+    choosedCover.set(null);
+  };
+</script>
+
+<div class="linear-background grid place-items-center">
+  <div class=" space-y-4 p-6">
+    <h1 class="font-bold text-3xl text-white md:text-6xl vt-name-[title]">Choose Template</h1>
     <div class="grid grid-cols-4 grid-rows-4 gap-4 md:gap-10 md:px-10 md:py-4">
       {#each covers as cover}
         <button
           id={cover.id.toString()}
           on:click={() => selectCoverHandler(cover)}
-          class="{cover.position} hover:cursor-pointer relative"
+          class="{cover.position} hover:cursor-pointer relative vt-name-[{cover.name}]"
         >
           <img
             src={cover.img}
@@ -43,15 +44,7 @@
           {/if}
         </button>
       {/each}
-   
     </div>
-    <!-- <div class="flex justify-center h-fit">
-      <button
-        disabled={!$choosedCover?.id}
-        type="button"
-        class="bg-black text-white px-8 py-3 rounded-md border-current font-sans font-extralight text-xl hover:bg-slate-900 disabled:bg-gray-600 disabled:cursor-not-allowed"
-        >Continue</button
-      >
-    </div> -->
   </div>
-  
+</div>
+

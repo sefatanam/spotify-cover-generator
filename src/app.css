@@ -4,7 +4,7 @@
 
 
 @layer utilities {
-  .app-wrapper{
+  .slot-view{
     @apply sm:container md:min-w-[100%] sm:mx-auto grid md:grid-cols-2 min-h-screen;
   }
   .fit-img{
@@ -13,4 +13,11 @@
   .linear-background{
     background: linear-gradient(to bottom, rgb(78 20 243) 0%, rgb(97 34 159) 100%);
   }
+}
+
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-delay: 2s;
+  animation-duration: 5s;
 }

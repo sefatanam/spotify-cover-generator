@@ -1,7 +1,10 @@
 <script lang="ts">
+
   import Greeting from "./Greeting.svelte";
   import Templates from "./Templates.svelte";
 </script>
 
-<Greeting />
-<Templates />
+<div class="slot-view" >
+  <Greeting />
+  <Templates />
+</div>
