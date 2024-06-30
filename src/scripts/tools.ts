@@ -53,7 +53,7 @@ export type TextPosition = (typeof textPositions)[number]
 export const editMode = writable<boolean>(false);
 export const positions = writable<typeof textPositions>(textPositions)
 export const fadeSetting = writable<FadeSetting>(defaultFadeSetting)
-export const currentChanged = writable<CurrentChanged>({key: "text1", value: "Hello"})
+export const currentChanged = writable<CurrentChanged>({key: "text1", value: ""})
 /**
  * A function that updates the fade cover settings.
  *

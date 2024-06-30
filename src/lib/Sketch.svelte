@@ -2,10 +2,14 @@
   //@ts-ignore
   import canvasSketch from "canvas-sketch";
   import { onMount } from "svelte";
-  import { currentChanged } from "../scripts/tools";
+  import { currentChanged, fadeSetting } from "../scripts/tools";
   import {
+    addColorInTextOne,
+    addColorInTextTwo,
+    drawFadeColor,
     drawImageInCanvas,
-    drawText1AndColorInCanvas,
+    drawTextOne,
+    drawTextTwo,
   } from "../scripts/engine";
 
   let canvas: HTMLCanvasElement;
@@ -19,10 +23,6 @@
       scaleToView: true,
       canvas: canvas,
       resizeCanvas: true,
-      canvasHeight: 2048,
-      canvasWidth: 2048,
-      styleHeight: 500,
-      styleWidth: 500,
     };
     currentChanged.subscribe(({ key, value }) => {
       canvasSketch(
@@ -35,7 +35,24 @@
                 break;
               }
               case "text1": {
-                drawText1AndColorInCanvas(context, value);
+                drawTextOne(context, value);
+                break;
+              }
+              case "text2": {
+                drawTextTwo(context, value);
+                break;
+              }
+              case "color1": {
+                addColorInTextOne(context, $fadeSetting.text1, value);
+                break;
+              }
+              case "color2": {
+                addColorInTextTwo(context, $fadeSetting.text2, value);
+                break;
+              }
+              case "fadeColor": {
+                drawFadeColor(context, value, canvasWidth, canvasHeight);
+                break;
               }
             }
           };

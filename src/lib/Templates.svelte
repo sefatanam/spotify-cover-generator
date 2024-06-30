@@ -11,7 +11,7 @@
 
 <div class="md:grid md:place-items-center h-full">
   <div class="space-y-4 p-6">
-    <h1 class="font-bold text-3xl text-white md:text-4xl lg:text-5xl xl:text-6xl vt-name-[title]">Choose Template</h1>
+    <h1 class="font-bold text-3xl text-white md:text-4xl lg:text-5xl xl:text-6xl vt-name-[title]">Choose Preset</h1>
     <div class="grid grid-cols-4 grid-rows-4 gap-4 md:gap-10 md:px-10 md:py-4">
       {#each covers as cover}
         <button
