@@ -11,19 +11,6 @@
   let canvas: HTMLCanvasElement;
   let settings = {};
 
-  const startSketch = () => {
-    canvasSketch(
-      // @ts-ignore
-      ({ context, width, height }) => {
-        return () => {
-          context.fillStyle = "white";
-          context.fillRect(0, 0, width, height);
-        };
-      },
-      { settings, canvas }
-    );
-  };
-
   onMount(() => {
     settings = {
       dimensions: [2048, 2048],
@@ -37,23 +24,18 @@
       styleHeight: 500,
       styleWidth: 500,
     };
-    // startSketch()
     currentChanged.subscribe(({ key, value }) => {
       canvasSketch(
         // @ts-ignore
-        ({ context, width, height }) => {
-          console.log(width, height);
+        ({ context, canvasHeight, canvasWidth, ...args }) => {
           return () => {
             switch (key) {
               case "fileURL": {
-                drawImageInCanvas(context, value, width, height);
+                drawImageInCanvas(context, value, canvasWidth, canvasHeight);
                 break;
               }
               case "text1": {
                 drawText1AndColorInCanvas(context, value);
-              }
-              default: {
-                console.log("key: ", key, " value: ", value, "invalid");
               }
             }
           };
@@ -72,4 +54,3 @@
     max-width: 500px !important;
   }
 </style>
-
