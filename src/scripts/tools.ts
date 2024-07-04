@@ -17,17 +17,12 @@ export type FadeSetting = {
     text2: string;
     color1: string;
     color2: string;
-    position: TextPosition;
+    position: Position;
     fadeColor: string;
 }
-export type SettingsKey<T> = keyof T;
-export type FadeSettingsKey = SettingsKey<FadeSetting> 
-export type FadeSettingValue = FadeSetting[FadeSettingsKey]
-
-export type CurrentChanged = {
-    key: FadeSettingsKey
-    value: FadeSettingValue
-};
+export type FadeSettingProp = {
+    [k in keyof FadeSetting]: { key: k, value: FadeSetting[k] }
+}[keyof FadeSetting]
 
 export const defaultFadeSetting: FadeSetting = {
     fileURL: "",
@@ -39,7 +34,11 @@ export const defaultFadeSetting: FadeSetting = {
     fadeColor: "#000000",
 }
 
-const textPositions = [
+export type XPosition = 'left' | 'center' | 'right';
+export type YPosition = 'top' | 'center' | 'bottom'
+export type Position = `${YPosition}-${XPosition}`;
+
+const textPositions: Position[] = [
     "top-left",
     "top-center",
     "top-right",
@@ -53,7 +52,8 @@ export type TextPosition = (typeof textPositions)[number]
 export const editMode = writable<boolean>(false);
 export const positions = writable<typeof textPositions>(textPositions)
 export const fadeSetting = writable<FadeSetting>(defaultFadeSetting)
-export const currentChanged = writable<CurrentChanged>({key: "text1", value: ""})
+export const currentChanged = writable<FadeSettingProp>({ key: "position", value: "top-left" })
+
 /**
  * A function that updates the fade cover settings.
  *

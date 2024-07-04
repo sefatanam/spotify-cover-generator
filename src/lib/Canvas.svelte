@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { choosedCover as cover } from "../scripts/store";
   import Sketch from "./Sketch.svelte";  
 </script>
 
