@@ -20,7 +20,7 @@
   </p>
 
   <div class="space-y-4 pt-10">
-    <h2 class="font-bold text-xl text-white md:text-2xl">Default</h2>
+    <!-- <h2 class="font-bold text-xl text-white md:text-2xl">Default</h2> -->
     <div>
       <label for="file-picker" class="label">File Picker</label>
       <input
@@ -31,53 +31,56 @@
       />
     </div>
 
-    <div>
-      <label for="textbox1" class="label">Text 1</label>
-      <input
-        type="text"
-        id="textbox1"
-        class=" contorl"
-        bind:value={$fadeSetting.text1}
-        on:change={() =>
-          currentChanged.set({ key: "text1", value: $fadeSetting.text1 })}
-      />
+    <div class="grid gap-2 lg:grid-cols-2">
+      <div>
+        <label for="textbox1" class="label">Text 1</label>
+        <input
+          type="text"
+          id="textbox1"
+          class=" contorl"
+          bind:value={$fadeSetting.text1}
+          on:change={() =>
+            currentChanged.set({ key: "text1", value: $fadeSetting.text1 })}
+        />
+      </div>
+      <div>
+        <label for="color-picker1" class="label">Text Color 1</label>
+        <input
+          type="color"
+          id="color-picker1"
+          class="contorl"
+          bind:value={$fadeSetting.color1}
+          on:change={() =>
+            currentChanged.set({ key: "color1", value: $fadeSetting.color1 })}
+        />
+      </div>
     </div>
 
-    <div>
-      <label for="textbox2" class="label">Text 2</label>
-      <input
-        type="text"
-        id="textbox2"
-        class="contorl"
-        bind:value={$fadeSetting.text2}
-        on:change={() =>
-          currentChanged.set({ key: "text2", value: $fadeSetting.text2 })}
-      />
+    <div class="grid gap-2 lg:grid-cols-2">
+      <div>
+        <label for="textbox2" class="label">Text 2</label>
+        <input
+          type="text"
+          id="textbox2"
+          class="contorl"
+          bind:value={$fadeSetting.text2}
+          on:change={() =>
+            currentChanged.set({ key: "text2", value: $fadeSetting.text2 })}
+        />
+      </div>
+      <div>
+        <label for="color-picker2" class="label">Text Color 2</label>
+        <input
+          type="color"
+          id="color-picker2"
+          class="contorl"
+          bind:value={$fadeSetting.color2}
+          on:change={() =>
+            currentChanged.set({ key: "color2", value: $fadeSetting.color2 })}
+        />
+      </div>
     </div>
 
-    <div>
-      <label for="color-picker1" class="label">Text Color 1</label>
-      <input
-        type="color"
-        id="color-picker1"
-        class="contorl"
-        bind:value={$fadeSetting.color1}
-        on:change={() =>
-          currentChanged.set({ key: "color1", value: $fadeSetting.color1 })}
-      />
-    </div>
-
-    <div>
-      <label for="color-picker2" class="label">Text Color 2</label>
-      <input
-        type="color"
-        id="color-picker2"
-        class="contorl"
-        bind:value={$fadeSetting.color2}
-        on:change={() =>
-          currentChanged.set({ key: "color2", value: $fadeSetting.color2 })}
-      />
-    </div>
     <div>
       <label for="color-picker2" class="label">Fade Color</label>
       <input

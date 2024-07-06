@@ -22,7 +22,7 @@
   }
 
   .contorl[type="color"]{
-    @apply text-current;
+    @apply text-current py-4;
   }
   .contorl[type="file"]{
     @apply bg-transparent;
