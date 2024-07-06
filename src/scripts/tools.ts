@@ -21,6 +21,56 @@ export type FadeSetting = {
     fadeColor: string;
     shapeColor: string;
 }
+export type Basic = {
+    fileURL: string;
+    position: Position;
+    text1: string;
+    text2: string;
+}
+
+export type Fade = {
+    color1: string;
+    color2: string;
+    fadeColor: string;
+    fileURL: string;
+    position: Position;
+    text1: string;
+    text2: string;
+} & Basic;
+
+export type Curbe = {
+    shapeColor: string;
+} & Fade
+
+type NestedKeyValue<T> = {
+    [K in keyof T]: { key: K; value: T[K] }
+}[keyof T];
+
+// Define the specific setting types using the generic type
+type BasicSetting = NestedKeyValue<Basic>;
+type FadeSetting2 = NestedKeyValue<Fade>;
+type CurbeSetting = NestedKeyValue<Curbe>;
+
+// Define a more specific mapping type for each key
+type SpecificSetting<T extends 'basic' | 'fade' | 'curbe'> =
+    T extends 'basic' ? { key: 'basic'; setting: BasicSetting } :
+    T extends 'fade' ? { key: 'fade'; setting: FadeSetting2 } :
+    T extends 'curbe' ? { key: 'curbe'; setting: CurbeSetting } :
+    never;
+ 
+// TODO : make this more generic
+/**
+ * currentyl only used for updating the curbe setting
+ * and it worked well
+ */
+const updateSetting: SpecificSetting<'curbe'> = {
+    key: 'curbe',
+    setting: {
+        key: 'position',
+        value: 'top-left'
+    }
+}
+
 export type FadeSettingProp = {
     [k in keyof FadeSetting]: { key: k, value: FadeSetting[k] }
 }[keyof FadeSetting]
