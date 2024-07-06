@@ -66,7 +66,7 @@ type SpecificSetting<T extends 'basic' | 'fade' | 'curbe'> =
 const updateSetting: SpecificSetting<'curbe'> = {
     key: 'curbe',
     setting: {
-        key: 'position',
+        key: 'shapeColor',
         value: 'top-left'
     }
 }
@@ -76,7 +76,7 @@ export type FadeSettingProp = {
 }[keyof FadeSetting]
 
 export const defaultFadeSetting: FadeSetting = {
-    fileURL: "",
+    fileURL: "https://plus.unsplash.com/premium_photo-1689974465650-b223928cdc9e?q=80&w=3884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     text1: "",
     text2: "",
     color1: "#000000",
@@ -104,7 +104,7 @@ export type TextPosition = (typeof textPositions)[number]
 export const editMode = writable<boolean>(false);
 export const positions = writable<typeof textPositions>(textPositions)
 export const fadeSetting = writable<FadeSetting>(defaultFadeSetting)
-export const currentChanged = writable<FadeSettingProp>({ key: "position", value: "top-left" })
+export const currentChanged = writable<FadeSettingProp>({ key: "fileURL", value: "https://plus.unsplash.com/premium_photo-1689974465650-b223928cdc9e?q=80&w=3884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" })
 
 /**
  * A function that updates the fade cover settings.

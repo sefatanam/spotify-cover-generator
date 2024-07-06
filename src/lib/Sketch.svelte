@@ -19,11 +19,12 @@
   onMount(() => {
     settings = {
       dimensions: [2048, 2048],
-      styleCanvas: true,
+      styleCanvas: false,
       units: "px",
       scaleToView: true,
       canvas: canvas,
       resizeCanvas: true,
+      scaleToFit:false
     };
     currentChanged.subscribe(({ key, value }) => {
       canvasSketch(
@@ -68,11 +69,6 @@
   });
 </script>
 
-<canvas bind:this={canvas} id="canvas"></canvas>
+<canvas bind:this={canvas} id="canvas" class="max-h-[300px] max-w-[300px] sm:max-h-[300px] sm:max-w-[300px] lg:max-h-[500px] lg:max-w-[500px]"></canvas>
 
-<style>
-  #canvas {
-    max-height: 500px !important;
-    max-width: 500px !important;
-  }
-</style>
+ 
