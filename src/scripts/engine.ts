@@ -59,7 +59,8 @@ const redrawCanvas = (context: CanvasRenderingContext2D) => {
  */
 export const drawImageInCanvas = (context: CanvasRenderingContext2D, imgURL: string, width: number, height: number) => {
 
-    const img = document.createElement('img') as HTMLImageElement
+    const img = document.createElement('img') as HTMLImageElement;
+    img.crossOrigin = 'anonymous';
     img.src = imgURL;
 
     img.onload = () => {

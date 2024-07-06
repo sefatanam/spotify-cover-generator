@@ -67,8 +67,18 @@
       );
     });
   });
+
+
+  const exportAsImage = () => {
+    const dataURL = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = dataURL;
+    link.download = `spotify-cover-${Date.now()}.png`;
+    link.click( )
+  }
 </script>
 
 <canvas bind:this={canvas} id="canvas" class="max-h-[300px] max-w-[300px] sm:max-h-[300px] sm:max-w-[300px] lg:max-h-[500px] lg:max-w-[500px]"></canvas>
 
  
+<button class="control text-white bg-slate-900 px-4 py-2" on:click={exportAsImage}>Export</button>
