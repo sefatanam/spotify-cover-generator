@@ -6,6 +6,7 @@
   import {
     addColorInTextOne,
     addColorInTextTwo,
+    changeShapeColor,
     drawFadeColor,
     drawImageInCanvas,
     drawTextOne,
@@ -52,6 +53,10 @@
               }
               case "fadeColor": {
                 drawFadeColor(context, value, canvasWidth, canvasHeight);
+                break;
+              }
+              case "shapeColor": {
+                changeShapeColor(context, value, canvasWidth, canvasHeight);
                 break;
               }
             }

@@ -92,6 +92,20 @@
           })}
       />
     </div>
+    <div>
+      <label for="color-picker3" class="label">Shape Color</label>
+      <input
+        type="color"
+        id="color-picker3"
+        class="contorl"
+        bind:value={$fadeSetting.shapeColor}
+        on:change={() =>
+          currentChanged.set({
+            key: "shapeColor",
+            value: $fadeSetting.shapeColor,
+          })}
+      />
+    </div>
 
     <!-- <div>
       <label for="position-picker" class="label">Text Position</label>

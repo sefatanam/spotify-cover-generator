@@ -19,6 +19,7 @@ export type FadeSetting = {
     color2: string;
     position: Position;
     fadeColor: string;
+    shapeColor: string;
 }
 export type FadeSettingProp = {
     [k in keyof FadeSetting]: { key: k, value: FadeSetting[k] }
@@ -32,6 +33,7 @@ export const defaultFadeSetting: FadeSetting = {
     color2: "#000000",
     position: "top-left",
     fadeColor: "#000000",
+    shapeColor: '#000000'
 }
 
 export type XPosition = 'left' | 'center' | 'right';
@@ -68,4 +70,3 @@ export const updateFadeSetting = (settings: Partial<FadeSetting>) => {
         }
     })
 }
-
