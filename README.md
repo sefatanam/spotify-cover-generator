@@ -14,7 +14,7 @@ Welcome to the **Spotify Cover Image Generator** repository. This project is bui
 
 ## Demo
 
-Check out the [live demo](https://sefatanam.github.io/spotify-cover) to see the generator in action.
+Check out the [live demo](spotify-cover-sand.vercel.app) to see the generator in action.
 
 ## Installation
 
