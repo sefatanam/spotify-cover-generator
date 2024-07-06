@@ -1,47 +1,73 @@
-# Svelte + TS + Vite
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+# Spotify Cover Image Generator
 
-## Recommended IDE Setup
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+Welcome to the **Spotify Cover Image Generator** repository. This project is built with Svelte and allows users to create custom Spotify cover images with various presets, high-quality image export, and a live preview feature.
 
-## Need an official Svelte framework?
+## Features
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- **High-Quality Image Export:** Export your cover images in high resolution.
+- **Three Presets:** Choose from three different design presets to quickly create stunning covers.
+- **Live Preview:** See your changes in real-time as you customize your cover.
+- **Smooth Performance:** Enjoy a seamless experience with smooth performance, even with complex designs.
 
-## Technical considerations
+## Demo
 
-**Why use this over SvelteKit?**
+Check out the [live demo](https://sefatanam.github.io/spotify-cover) to see the generator in action.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## Installation
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+To get started with the project locally, follow these steps:
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/sefatanam/spotify-cover.git
+    ```
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+2. **Navigate to the project directory:**
+    ```bash
+    cd spotify-cover
+    ```
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+3. **Install dependencies:**
+    ```bash
+    pnpm install
+    ```
 
-**Why include `.vscode/extensions.json`?**
+4. **Run the development server:**
+    ```bash
+    pnpm dev
+    ```
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+## Usage
 
-**Why enable `allowJs` in the TS template?**
+Once the development server is running, open your browser and navigate to `http://localhost:51732`. You can now start creating and customizing your Spotify cover images.
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+## Contributing
 
-**Why is HMR not preserving my local component state?**
+Contributions are welcome! If you have any ideas for improvements or find any bugs, feel free to open an issue or submit a pull request.
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
+1. **Fork the repository**
+2. **Create a new branch:**
+    ```bash
+    git checkout -b my-feature-branch
+    ```
+3. **Make your changes**
+4. **Commit your changes:**
+    ```bash
+    git commit -m 'Add some feature'
+    ```
+5. **Push to the branch:**
+    ```bash
+    git push origin my-feature-branch
+    ```
+6. **Open a pull request**
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+## License
 
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Connect
+
+For more information, follow me on [LinkedIn](https://www.linkedin.com/in/sefatanam).
